@@ -96,5 +96,5 @@ Future Additions
 Time permitting, I'd like to add the following features:
 
 * Streaming uploads 
-* HTTPS/TLS support via (hs-tls)[https://github.com/vincenthz/hs-tls]
+* HTTPS/TLS support via [hs-tls](https://github.com/vincenthz/hs-tls)
 
