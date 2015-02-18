@@ -1,0 +1,45 @@
+Name:                hsURL
+Version:             0.1.0.0
+Cabal-Version:       >=1.8
+License:             MIT
+License-File:        LICENSE
+Author:              Nick Reynolds
+Maintainer:          ndreynolds@gmail.com
+Category:            Network
+Build-type:          Simple
+Synopsis:            A library and command line tool for making HTTP requests
+
+Library
+  Hs-Source-Dirs:    src
+  Exposed-Modules:   Http.Connection, Http.Request, Http.Response, Http.Uri
+  Build-Depends:     base ==4.7.*, 
+                     network ==2.4.*, 
+                     bytestring ==0.10.*, 
+                     parsec ==3.1.*, 
+                     io-streams ==1.1.*, 
+                     mtl ==2.1.*
+
+Executable hsurl
+  Hs-Source-Dirs:    commandline
+  Main-Is:           Main.hs
+  Build-Depends:     base ==4.7.*, 
+                     hsURL
+
+Test-Suite testsuite
+  Type:              exitcode-stdio-1.0
+  Hs-Source-Dirs:    src test
+  Main-Is:           TestSuite.hs
+  Default-Language:  Haskell2010
+  Other-Modules:     Http.Tests.Request,
+                     Http.Request
+  Build-Depends:     base ==4.7.*, 
+                     hsURL,
+                     HUnit                      >= 1.2      && <2,
+                     QuickCheck                 >= 2.3.0.2  && <3,
+                     test-framework             >= 0.6      && <0.9,
+                     test-framework-hunit       >= 0.2.7    && <0.4,
+                     test-framework-quickcheck2 >= 0.2.12.1 && <0.4
+
+Source-Repository head
+  Type:              git
+  Location:          git://github.com/ndreynolds/hsURL

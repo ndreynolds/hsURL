@@ -1,0 +1,73 @@
+-- HTTP/1.1 requests consist of the following components:
+--
+-- request:
+--
+--    Request-Line
+--    *(( general-header
+--     |  request-header
+--     |  entity-header ) CRLF)
+--    CRLF
+--    [ message-body ]
+--
+-- request-line: 
+--
+--    method SP request-uri SP http-version CRLF
+--
+-- method: "OPTIONS" 
+--       | "GET" 
+--       | "HEAD" 
+--       | "POST" 
+--       | "PUT" 
+--       | "DELETE" 
+--       | "TRACE" 
+--       | "CONNECT"
+--
+-- request-uri: "*" 
+--            | absoluteURI 
+--            | abs_path 
+--            | authority
+--
+-- general-header: Cache-Control
+--               | Connection
+--               | Date
+--               | Pragma
+--               | Trailer
+--               | Transfer-Encoding
+--               | Upgrade
+--               | Via
+--               | Warning
+--
+-- request-header: Accept 
+--               | Accept-Charset 
+--               | Accept-Encoding 
+--               | Accept-Language 
+--               | Authorization 
+--               | Expect 
+--               | From 
+--               | Host 
+--               | If-Match 
+--               | If-Modified-Since
+--               | If-Unmodified-Since
+--               | Max-Forwards
+--               | Proxy-Authorization
+--               | Range
+--               | Referer
+--               | TE
+--               | User-Agent
+--
+-- entity-header: Allow
+--              | Content-Encoding
+--              | Content-Language
+--              | Content-Length
+--              | Content-Location
+--              | Content-MD5
+--              | Content-Range
+--              | Content-Type
+--              | Expires
+--              | Last-Modified
+--              | extension-header
+--
+-- extension-header: message-header
+
+import qualified Http.Request
+import qualified Http.Response
